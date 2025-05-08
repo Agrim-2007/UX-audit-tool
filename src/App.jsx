@@ -18,7 +18,6 @@ function App() {
         const GEMINI_API_KEY = "AIzaSyDYjbaipSpMBEuZHT6cVbcTCPpWC3NCZZg";
         const input = (inputType === 'url') ? url : html;
 
-        // Clear the input field after capturing
         if (inputType === 'url') {
             setUrl('');
         } else {
