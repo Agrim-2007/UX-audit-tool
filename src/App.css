@@ -1,0 +1,393 @@
+/* Resetting some default browser styles for consistency */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  max-width: 1100px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: calc(100vh - 40px);
+}
+
+.app-header {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.app-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.loading-indicator {
+  font-style: italic;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.instruction-container {
+  text-align: center;
+  width: 80%;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.instruction-text {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.feedback-container {
+  width: 80%;
+  max-width: 700px;
+  margin: 20px 0;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.feedback-container h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #34495e;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.feedback-list {
+  list-style: disc;
+  padding-left: 25px;
+}
+
+.feedback-list li {
+  margin-bottom: 12px;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.app-footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 98%;
+  max-width: 1100px;
+}
+
+.input-type-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.input-type-toggle button {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.input-type-toggle button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.input-type-toggle button:hover:not(.active) {
+  background-color: #eee;
+}
+
+.input-area {
+  margin-bottom: 15px;
+}
+
+.input-area input[type="text"],
+.input-area textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.input-area textarea {
+  min-height: 100px;
+}
+
+.analyze-section {
+  display: flex;
+  gap: 15px;
+  width: 100%; /* Take up the full width */
+  flex-direction: column; /* Stack items vertically by default */
+  align-items: stretch; /* Stretch items to container width */
+}
+
+.analyze-section > div {
+  flex-grow: 1;
+  width: 100%; /* Ensure inputs take full width */
+}
+
+.analyze-section input[type="text"],
+.analyze-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+.analyze-section button {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.analyze-section button:hover {
+  background-color: #2980b9;
+}
+
+.analyze-section button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.pdf-editor-button {
+    padding: 12px 20px;
+    background-color: #00c853; /* A green color for PDF editor button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; /* Add space above the button */
+    align-self: center; /* Center the button horizontally */
+}
+
+.pdf-editor-button:hover {
+    background-color: #009640; /* Darker shade on hover */
+}
+
+
+/* Responsive Design Adjustments */
+@media (min-width: 768px) {
+  .app-footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Space out items horizontally */
+  }
+
+  .analyze-section {
+    flex-direction: row; /* Arrange inputs and button in a row on larger screens */
+    width: 80%; /* */
+    max-width: 700px;
+    align-items: stretch; /* Make items stretch to equal height */
+  }
+    .analyze-section > div {
+        flex-grow: 1;
+    }
+  .pdf-editor-button{
+        margin-top: 0;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+  .app-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .instruction-text {
+    font-size: 1rem;
+  }
+
+  .feedback-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .feedback-list li {
+    font-size: 1rem;
+  }
+
+  .input-type-toggle button {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+
+  .input-area input[type="text"],
+  .input-area textarea {
+    font-size: 1rem;
+  }
+
+  .analyze-section button {
+    font-size: 1.1rem;
+    padding: 12px 18px;
+  }
+}
+
+.markdown-output p {
+    line-height: 1.7;
+    color: #4a4a4a;
+}
+
+.markdown-output h2{
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.markdown-output strong {
+    font-weight: 600;
+    color: #2c3e50;
+}
+.copy-button {
+  padding: 10px 15px;
+  background-color: #007bff; /* A blue color for copy button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+  align-self: flex-start; /* Align to the start of the feedback container */
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+  .copy-button {
+    align-self: flex-start; /* Keep alignment on larger screens */
+  }
+}
+
+/* ... your existing CSS ... */
+
+.input-area {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-area label {
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.copy-button {
+  padding: 10px 15px;
+  background-color: #007bff; /* A blue color for copy button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
+
+.copy-button.copy-success {
+  background-color: #28a745; /* Green for success */
+  color: white;
+}
+
+.analyze-section {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.analyze-section > div {
+  flex-grow: 1;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .analyze-section {
+    flex-direction: row;
+    width: 80%;
+    max-width: 700px;
+    align-items: stretch;
+  }
+  .analyze-section > div {
+    flex-grow: 1;
+  }
+  .copy-button {
+    align-self: flex-start;
+  }
+}
+/* 1 forntend
+2 if url orif url
+3 givr to gemini
+4 respons4e is md file
+5 render in pdf */
