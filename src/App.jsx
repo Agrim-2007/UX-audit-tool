@@ -86,6 +86,7 @@ function App() {
             inputElement.addEventListener('keydown', handleKeyDown);
         }
 
+
         return () => {
             if (inputElement) {
                 inputElement.removeEventListener('keydown', handleKeyDown);
