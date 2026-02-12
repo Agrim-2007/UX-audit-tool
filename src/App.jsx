@@ -15,7 +15,7 @@ function App() {
         setFeedback('');
         setCopySuccess('');
 
-        const GEMINI_API_KEY = "AIzaSyDYjbaipSpMBEuZHT6cVbcTCPpWC3NCZZg";
+        const GEMINI_API_KEY = process.env.GEMINI_API_KEY
         const input = (inputType === 'url') ? url : html;
 
         if (inputType === 'url') {
